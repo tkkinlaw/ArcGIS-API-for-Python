@@ -15,10 +15,10 @@ Classes mentioned:
 - `arcgis.features.GeoAccessor` class adds the `spatial` namespace to the Pandas DataFrame.
     - Some functionality from this class requires a geometry engine. We prefer ArcPy. If not available, other packages, like GDAL, can be used [(see help doc)](https://developers.arcgis.com/python/latest/api-reference/arcgis.features.toc.html#arcgis.features.GeoAccessor:~:text=%3Cmem_addr%3E%3E-,NOTE,-Setting%20the%20I)
 
-    ``py
+    ```python
     import os
     os.environ["ARCGIS_IO_ENGINE"] = "<engine of choice>"  # e.g., "gdal"
-    ``
+    ```
 
 ## Strategies for content management
 
