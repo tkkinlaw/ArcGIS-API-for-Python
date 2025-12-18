@@ -42,6 +42,7 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
 ### Extra: comparing search and advanced_search:
 Parameters of `search`: 
 > search(query: str, item_type: str | None = None, sort_field: str = 'avgRating', sort_order: str = 'desc', max_items: int = 10, outside_org: bool = False, categories: list[str] | str | None = None, category_filters: list[str] | str | None = None, enrich: bool | None = None, filter: str | None = None)
+
 Parameters of `advanced_search`:
 > advanced_search(query: str, return_count: bool = False, max_items: int = 100, bbox: list[str] | str | None = None, categories: str | None = None, category_filter: str | None = None, start: int = 1, sort_field: str = 'title', sort_order: str = 'asc', count_fields: str | None = None, count_size: int | None = None, as_dict: bool = False, enrich: bool = False, filter: str | None = None)
 
