@@ -37,7 +37,18 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
     - Fields are used to focus the search.
         - [List of all Item fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#item-fields)
         - [List of all Group fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#group-fields)
-    - Without a field, the search ranks results according to various factors. You have less control this way. , `res = gis.content.search('Yosemite')` 
+    - Without a field, the search ranks results according to various factors, and results can change. You have less control this way. Example: `res = gis.content.search('Yosemite')` 
+
+### Extra: comparing search and advanced_search:
+Parameters of `search`: 
+> search(query: str, item_type: str | None = None, sort_field: str = 'avgRating', sort_order: str = 'desc', max_items: int = 10, outside_org: bool = False, categories: list[str] | str | None = None, category_filters: list[str] | str | None = None, enrich: bool | None = None, filter: str | None = None)
+Parameters of `advanced_search`:
+> advanced_search(query: str, return_count: bool = False, max_items: int = 100, bbox: list[str] | str | None = None, categories: str | None = None, category_filter: str | None = None, start: int = 1, sort_field: str = 'title', sort_order: str = 'asc', count_fields: str | None = None, count_size: int | None = None, as_dict: bool = False, enrich: bool = False, filter: str | None = None)
+
+Resources:
+- [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
+
+
 
 ## Workflows for feature layer management
 
