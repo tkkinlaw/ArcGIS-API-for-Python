@@ -42,15 +42,19 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
 ### Extra: comparing search and advanced_search:
 Parameters of `search`: 
 > search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
-- Can use item_type & outside_org
+- `query` is the key. 
+    - Supports range searches, with numbers, dates, and text (to get results lexicographically; in dictionary order). `[]` is inclusive. `{}` is exclusive
+- Can use `item_type` & `outside_org`
+- `filter` should be used for yes/no searches and queries for exact values because `query` is a full-text search influenced by a relevance score. Filter uses [very few fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#query-vs-filter).
+- 
 
 Parameters of `advanced_search`:
 > advanced_search(query, return_count, max_items, bbox, categories, category_filter, start, sort_field, sort_order, count_fields, count_size, as_dict, enrich, filter)
 - Can use:
-    - bbox to use a spatial extent
-    - count_fields can use used to produce counts of results per field (like access and type). Results seem to automatically be listed in descending order. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
-    - count_size can be used with count_fields to limit how many aggregations it comes up with. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)`
-    - as_dict to return values as a dictionary instead of a list
+    - `bbox` to use a spatial extent
+    - `count_fields` can use used to produce counts of results per field (like access and type). Results seem to automatically be listed in descending order. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
+    - `count_size` can be used with count_fields to limit how many aggregations it comes up with. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)`
+    - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
