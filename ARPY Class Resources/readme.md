@@ -25,7 +25,10 @@ Classes mentioned:
 There are many manager classes in the API for Python. We've seen the UserManager class. 
 Resource manager classes:
 - Provide access to different properties and methods for a single item, or many items
-- Examples: 
+- Examples: UserManager, ContentManager, GroupManager
+- The "Resources" of a given item can be access via the `resources` property of an item.
+
+Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#searching-for-content:~:text=content.search()%2C-,implements,-the%20ArcGIS%20REST) the [ArcGIS REST API search operation](https://developers.arcgis.com/rest/users-groups-and-items/search/). `gis.content.search()` is the search resource manager.
 
 ## Workflows for feature layer management
 
