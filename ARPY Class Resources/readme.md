@@ -41,13 +41,20 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
 
 ### Extra: comparing search and advanced_search:
 Parameters of `search`: 
-> search(query: str, item_type: str | None = None, sort_field: str = 'avgRating', sort_order: str = 'desc', max_items: int = 10, outside_org: bool = False, categories: list[str] | str | None = None, category_filters: list[str] | str | None = None, enrich: bool | None = None, filter: str | None = None)
+> search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
+- Can use item_type & outside_org
 
 Parameters of `advanced_search`:
-> advanced_search(query: str, return_count: bool = False, max_items: int = 100, bbox: list[str] | str | None = None, categories: str | None = None, category_filter: str | None = None, start: int = 1, sort_field: str = 'title', sort_order: str = 'asc', count_fields: str | None = None, count_size: int | None = None, as_dict: bool = False, enrich: bool = False, filter: str | None = None)
+> advanced_search(query, return_count, max_items, bbox, categories, category_filter, start, sort_field, sort_order, count_fields, count_size, as_dict, enrich, filter)
+- Can use:
+    - bbox to use a spatial extent
+    - count_fields can use used to produce counts of results per field (like access and type). Results seem to automatically be listed in descending order. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
+    - count_size can be used with count_fields to limit how many aggregations it comes up with. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)`
+    - as_dict to return values as a dictionary instead of a list
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
+- ArcGIS Online [help doc on advanced search](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm). Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
 
 
 
