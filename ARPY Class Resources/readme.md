@@ -19,8 +19,13 @@ Classes mentioned:
     import os
     os.environ["ARCGIS_IO_ENGINE"] = "<engine of choice>"  # e.g., "gdal"
     ```
+    - Examples are: `arcgis.GeoAccessor.from_featureclass`, `arcgis.FeatureSet.from_arcpy`, `GeoAccessor.from_table`, `arcgis.GeoAccessor.select`, and potentially more.
 
 ## Strategies for content management
+There are many manager classes in the API for Python. We've seen the UserManager class. 
+Resource manager classes:
+- Provide access to different properties and methods for a single item, or many items
+- Examples: 
 
 ## Workflows for feature layer management
 
