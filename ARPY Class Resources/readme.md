@@ -22,6 +22,8 @@ Classes mentioned:
     - Examples are: `arcgis.GeoAccessor.from_featureclass`, `arcgis.FeatureSet.from_arcpy`, `GeoAccessor.from_table`, `arcgis.GeoAccessor.select`, and potentially more.
 
 ## Strategies for content management
+The gis module's architecture form the help documentation:
+![gis module](https://developers.arcgis.com/python/latest/guide/images/guide_gis_module_01.png)
 There are many manager classes in the API for Python. We've seen the UserManager class. 
 Resource manager classes:
 - Provide access to different properties and methods for a single item, or many items
