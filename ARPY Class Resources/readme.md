@@ -38,6 +38,8 @@ gis = GIS('Pro')
 ```
 Exploring three managers, and the two ways to interact with them. Using a resource manager via the property uses the helper class under the hood. Almost all examples access these managers as a property. 
 
+These three managers have the `search` and `get` methods. `ContentManager` and `UserManager` have the `advanced_search` method as well.
+
 #### Group Manager
 ```python
 gis.groups
@@ -73,7 +75,7 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
         - [List of all Group fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#group-fields)
     - Without a field, the search ranks results according to various factors, and results can change. You have less control this way. Example: `res = gis.content.search('Yosemite')` 
 
-### Extra: comparing search and advanced_search:
+### Comparing search and advanced_search for `ContentManager`:
 Parameters of `search`: 
 ```python
 search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
@@ -99,6 +101,7 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)
     ```
     - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
+    `advanced_search` supports paging - easier to interact with the many returned data.
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
