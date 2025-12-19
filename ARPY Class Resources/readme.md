@@ -42,7 +42,8 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
 ### Extra: comparing search and advanced_search:
 Parameters of `search`: 
 ```python
-search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
+search(query, item_type, sort_field, sort_order, max_items, 
+    outside_org, categories, category_filters, enrich, filter)
 ```
 - `query` is the key. 
     - Supports range searches, with numbers, dates, and text (to get results lexicographically; in dictionary order). `[]` is inclusive. `{}` is exclusive
@@ -52,7 +53,9 @@ search(query, item_type, sort_field, sort_order, max_items, outside_org, categor
 
 Parameters of `advanced_search`:
 ```python
-advanced_search(query, return_count, max_items, bbox, categories, category_filter, start, sort_field, sort_order, count_fields, count_size, as_dict, enrich, filter)
+advanced_search(query, return_count, max_items, bbox, categories, 
+    category_filter, start, sort_field, sort_order, 
+    count_fields, count_size, as_dict, enrich, filter)
 ```
 - Can use:
     - `bbox` to use a spatial extent
