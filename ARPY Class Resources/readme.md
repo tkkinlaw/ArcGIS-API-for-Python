@@ -36,7 +36,7 @@ import arcgis
 from arcgis.gis import GIS
 gis = GIS('Pro')
 ```
-Exploring three managers, and the two ways to interact with them.
+Exploring three managers, and the two ways to interact with them. Using a resource manager via the property uses the helper class under the hood. Almost all examples access these managers as a property. 
 
 #### Group Manager
 ```python
@@ -44,7 +44,7 @@ gis.groups
 ```
 
 ```python
-arcgis.gis.GroupManager
+gm = arcgis.gis.GroupManager(gis=gis)
 ```
 
 #### Content Manager
@@ -53,7 +53,7 @@ gis.content
 ```
 
 ```python
-arcgis.gis.ContentManager
+cm = arcgis.gis.ContentManager(gis=gis)
 ```
 #### User Manager
 ```python
@@ -61,7 +61,7 @@ gis.users
 ```
 
 ```python
-arcgis.gis.UserManager
+um = arcgis.gis.UserManager(gis=gis)
 ```
 ### Searching for content
 Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#searching-for-content:~:text=content.search()%2C-,implements,-the%20ArcGIS%20REST) the [ArcGIS REST API search operation](https://developers.arcgis.com/rest/users-groups-and-items/search/). `gis.content.search()` is the search resource manager.
