@@ -30,6 +30,40 @@ Resource manager classes:
 - Examples: UserManager, ContentManager, GroupManager
 - The "Resources" of a given item can be access via the `resources` property of an item.
 
+### Content management workflows and manager classes
+```python
+import arcgis
+from arcgis.gis import GIS
+gis = GIS('Pro')
+```
+Exploring three managers, and the two ways to interact with them.
+
+#### Group Manager
+```python
+gis.groups
+```
+
+```python
+arcgis.gis.GroupManager
+```
+
+#### Content Manager
+```python
+gis.content
+```
+
+```python
+arcgis.gis.ContentManager
+```
+#### User Manager
+```python
+gis.users
+```
+
+```python
+arcgis.gis.UserManager
+```
+### Searching for content
 Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#searching-for-content:~:text=content.search()%2C-,implements,-the%20ArcGIS%20REST) the [ArcGIS REST API search operation](https://developers.arcgis.com/rest/users-groups-and-items/search/). `gis.content.search()` is the search resource manager.
 - The search is fuzzy because the search engine uses many different inputs to rank and display results, which change (like view count). When automating a script, use `get` or search using `ID` when possible.
 - > The ArcGIS Portal Directory REST API has a [full-featured text search engine](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#:~:text=The%20ArcGIS%20Portal%20Directory%20REST%20API%20has%20a%20full%2Dfeatured%20text%20search%20engine%20that%20allows%20you%20to%20create%20your%20own%20queries) that allows you to create your own queries
