@@ -66,6 +66,11 @@ gis.users
 um = arcgis.gis.UserManager(gis=gis)
 ```
 ### Searching for content
+[You can use search to](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/#what-can-i-search-for):
+- Search for public or private items.
+- Find different types of items.
+- Sort search results.
+- Return pages of search results.
 Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#searching-for-content:~:text=content.search()%2C-,implements,-the%20ArcGIS%20REST) the [ArcGIS REST API search operation](https://developers.arcgis.com/rest/users-groups-and-items/search/). `gis.content.search()` is the search resource manager.
 - The search is fuzzy because the search engine uses many different inputs to rank and display results, which change (like view count). When automating a script, use `get` or search using `ID` when possible.
 - > The ArcGIS Portal Directory REST API has a [full-featured text search engine](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#:~:text=The%20ArcGIS%20Portal%20Directory%20REST%20API%20has%20a%20full%2Dfeatured%20text%20search%20engine%20that%20allows%20you%20to%20create%20your%20own%20queries) that allows you to create your own queries
@@ -106,8 +111,6 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
 - ArcGIS Online [help doc on advanced search](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm). Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
-
-
 
 ## Workflows for feature layer management
 
