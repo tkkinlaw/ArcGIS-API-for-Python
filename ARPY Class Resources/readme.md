@@ -42,8 +42,7 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
 ### Extra: comparing search and advanced_search:
 Parameters of `search`: 
 ```python
-search(query, item_type, sort_field, sort_order, max_items, 
-    outside_org, categories, category_filters, enrich, filter)
+search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
 ```
 - `query` is the key. 
     - Supports range searches, with numbers, dates, and text (to get results lexicographically; in dictionary order). `[]` is inclusive. `{}` is exclusive
@@ -53,14 +52,18 @@ search(query, item_type, sort_field, sort_order, max_items,
 
 Parameters of `advanced_search`:
 ```python
-advanced_search(query, return_count, max_items, bbox, categories, 
-    category_filter, start, sort_field, sort_order, 
-    count_fields, count_size, as_dict, enrich, filter)
+advanced_search(query, return_count, max_items, bbox, categories, category_filter, start, sort_field, sort_order, count_fields, count_size, as_dict, enrich, filter)
 ```
 - Can use:
     - `bbox` to use a spatial extent
-    - `count_fields` can use used to produce counts of results per field (like access and type). Results seem to automatically be listed in descending order. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
-    - `count_size` can be used with count_fields to limit how many aggregations it comes up with. Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)`
+    - `count_fields` can use used to produce counts of results per field (like access and type). Results seem to automatically be listed in descending order. Example: 
+    ```python
+    gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")
+    ```
+    - `count_size` can be used with count_fields to limit how many aggregations it comes up with. Example: 
+    ```python
+    gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)
+    ```
     - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
 
 Resources:
