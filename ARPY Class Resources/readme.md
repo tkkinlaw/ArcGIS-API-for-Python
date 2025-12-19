@@ -101,7 +101,7 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)
     ```
     - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
-    `advanced_search` supports paging - easier to interact with the many returned data.
+    `advanced_search` supports paging - easier to interact with the many returned data. Paging/pagination splits data into smaller chunks (like dictinoary values) for easier viewing.
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
