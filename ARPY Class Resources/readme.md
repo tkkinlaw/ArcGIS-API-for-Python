@@ -112,6 +112,7 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
 
 The [help doc](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search) says:
 > Python list comprehensions can augment the resource managers search functionality to allow for more precise queries. 
+
 List comprehensions are just a technique to manage the results we want you to be aware of.
 
 ### Exercise: Apply strategies for managing content
