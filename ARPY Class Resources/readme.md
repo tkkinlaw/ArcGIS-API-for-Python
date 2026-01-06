@@ -30,6 +30,8 @@ Resource manager classes:
 - Examples: UserManager, ContentManager, GroupManager
 - The "Resources" of a given item can be access via the `resources` property of an item.
 
+
+
 ### Content management workflows and manager classes
 ```python
 import arcgis
@@ -107,6 +109,11 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     ```
     - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
     `advanced_search` supports paging - easier to interact with the many returned data. Paging/pagination splits data into smaller chunks (like dictinoary values) for easier viewing.
+
+The help doc says [Python list comprehensions can augment the resource managers search functionality to allow for more precise queries.](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search). List comprehensions are just a technique to manage the results we want you to be aware of.
+
+### Exercise: Apply strategies for managing content
+
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
