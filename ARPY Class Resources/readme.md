@@ -114,7 +114,7 @@ The [help doc](https://developers.arcgis.com/python/latest/guide/accessing-and-c
 
 List comprehensions are just a technique to manage the results we want you to be aware of. Example: 
 ```python
-dc_content = [item.url for item in gis.content.search('DC') if item.type=='Feature Service']
+dc_content = [item.layers for item in gis.content.search('DC') if item.type=='Feature Service']
 dc_content
 ```
 
@@ -123,10 +123,25 @@ Resources:
 - ArcGIS Online [help doc on advanced search](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm). Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
 
 ### Exercise: Apply strategies for managing content
-
-
 ## Workflows for feature layer management
+### Feature Layer Collection tasks
+The Feature Layer Collection is a container for one or more feature layers, accessible through `layers` and `tables` properties. The collection provides this information:
+- Extent
+- Spatial reference
+- Supported operations of services
+- Access to layers and tables
+
+The Feature Layer is a set of features. This is what we are used to adding to a map. It supports:
+- Edit access
+- Queries (attribute and spatial)
+- Convert query results to a DataFrame
+- Properties
+- Feature and attribute value access
+
+### Exercise: Manage feature layer content
 
 ## Strategies for updating feature layer properties
+### Exercise: Update feature layer properties
+
 
 ## Strategies for editing feature layers
