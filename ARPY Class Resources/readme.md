@@ -91,7 +91,6 @@ search(query, item_type, sort_field, sort_order, max_items, outside_org, categor
     - Supports range searches, with numbers, dates, and text (to get results lexicographically; in dictionary order). `[]` is inclusive. `{}` is exclusive
 - Can use `item_type` & `outside_org`
 - `filter` should be used for yes/no searches and queries for exact values because `query` is a full-text search influenced by a relevance score. Filter uses [very few fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#query-vs-filter).
-- 
 
 Parameters of `advanced_search`:
 ```python
@@ -113,14 +112,18 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
 The [help doc](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search) says:
 > Python list comprehensions can augment the resource managers search functionality to allow for more precise queries.
 
-List comprehensions are just a technique to manage the results we want you to be aware of.
-
-### Exercise: Apply strategies for managing content
-
+List comprehensions are just a technique to manage the results we want you to be aware of. Example: 
+```python
+dc_content = [item.url for item in gis.content.search('DC') if item.type=='Feature Service']
+dc_content
+```
 
 Resources:
 - [Find specific items using queries in the arcgis.gis module with ArcGIS API for Python](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
 - ArcGIS Online [help doc on advanced search](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm). Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
+
+### Exercise: Apply strategies for managing content
+
 
 ## Workflows for feature layer management
 
