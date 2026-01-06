@@ -111,7 +111,6 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     `advanced_search` supports paging - easier to interact with the many returned data. Paging/pagination splits data into smaller chunks (like dictinoary values) for easier viewing.
 
 The [help doc](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search) says:
-
 > Python list comprehensions can augment the resource managers search functionality to allow for more precise queries. 
 
 List comprehensions are just a technique to manage the results we want you to be aware of.
