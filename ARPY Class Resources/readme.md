@@ -110,7 +110,9 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     - `as_dict` to return values as a dictionary. Doesn't seem to change anything... 
     `advanced_search` supports paging - easier to interact with the many returned data. Paging/pagination splits data into smaller chunks (like dictinoary values) for easier viewing.
 
-The help doc says [Python list comprehensions can augment the resource managers search functionality to allow for more precise queries.](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search). List comprehensions are just a technique to manage the results we want you to be aware of.
+The [help doc](https://developers.arcgis.com/python/latest/guide/accessing-and-creating-content/#about-search) says:
+> Python list comprehensions can augment the resource managers search functionality to allow for more precise queries. 
+List comprehensions are just a technique to manage the results we want you to be aware of.
 
 ### Exercise: Apply strategies for managing content
 
