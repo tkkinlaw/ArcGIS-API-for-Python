@@ -43,6 +43,9 @@ Exploring three managers, and the two ways to interact with them. Using a resour
 
 These three managers have the `search` and `get` methods. `ContentManager` and `UserManager` have the `advanced_search` method as well.
 
+How do you choose between a manager when performing tasks? Example I ran into:
+- I wanted to move content from one user to another. When using `gis.user.get('Username').items()`, it returns a `generator`. You have to iterate over it to see the results. You can't determine the length (or anything) otherwise. Instead, I used `gis.content.search(query='owner:Username')`, which gives a `list` to work with the results before reassigning ownership.
+
 #### Group Manager
 ```python
 gis.groups
