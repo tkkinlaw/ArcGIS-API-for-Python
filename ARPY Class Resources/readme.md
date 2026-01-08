@@ -106,6 +106,7 @@ advanced_search(query, return_count, max_items, bbox, categories, category_filte
     ```python
     gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")
     ```
+        - `created` is a valid field, using the [creation date](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm#:~:text=are%20case%20sensitive.-,created,-The%20date%2C%20expressed), expressed in UNIX time.
     - `count_size` can be used with count_fields to limit how many aggregations it comes up with. Example: 
     ```python
     gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access", count_size=1)
