@@ -21,6 +21,9 @@ Classes mentioned:
     ```
     - Examples are: `arcgis.GeoAccessor.from_featureclass`, `arcgis.FeatureSet.from_arcpy`, `GeoAccessor.from_table`, `arcgis.GeoAccessor.select`, and potentially more.
 
+### Exercise: Connect to an organization
+Use the `len` function to compare `gis.properties` and g`is_EdOrg.properties`.
+
 ## Strategies for content management
 TThe GIS module consists of 5 main classes: GIS, User, Role, Group, Item
 ![gis module](https://developers.arcgis.com/python/latest/guide/images/guide_gis_module_01.png)
@@ -29,8 +32,6 @@ Resource manager classes:
 - Provide access to different properties and methods for a single item, or many items
 - Examples: UserManager, ContentManager, GroupManager
 - The "Resources" of a given item can be access via the `resources` property of an item.
-
-
 
 ### Content management workflows and manager classes
 ```python
@@ -123,6 +124,7 @@ Resources:
 - ArcGIS Online [help doc on advanced search](https://doc.arcgis.com/en/arcgis-online/reference/advanced-search.htm). Example: `gis.content.advanced_search(query='title:"Yosemite"', count_fields="type, access")`
 
 ### Exercise: Apply strategies for managing content
+
 ## Workflows for feature layer management
 ### Feature Layer Collection tasks
 The Feature Layer Collection is a container for one or more feature layers, accessible through `layers` and `tables` properties. The collection provides this information:
