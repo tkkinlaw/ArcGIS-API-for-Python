@@ -85,6 +85,7 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
         - [List of all Item fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#item-fields)
         - [List of all Group fields](https://developers.arcgis.com/rest/users-groups-and-items/search-reference/#group-fields)
     - Without a field, the search ranks results according to various factors, and results can change. You have less control this way. Example: `res = gis.content.search('Yosemite')` 
+- Be aware that there are other implementation of `search` in different manager classes, like in the [User Manager class](https://developers.arcgis.com/python/latest/guide/accessing-and-managing-users/#searching-for-user-accounts). There are subtle differences in which parameters are available, but they operate the same. Be aware that the `max_items` (or `max_users`) defaults to 10. So, you need an idea of how much content you're looking for.
 
 ### Comparing search and advanced_search for `ContentManager`:
 Parameters of `search`: 
