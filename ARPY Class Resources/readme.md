@@ -10,6 +10,7 @@ Classes seen:
 Technical concepts:
 - Authentication schemes
 - Organization architecture; ArcGIS Online and/or Enterprise on one/multiple servers.
+- User types & privileges determine your access. Anyone can see the full extent of the API, but not everyone can run every tool. For example, someone signed in with anonymous access can see public groups, but not hosting servers 
 
 Classes mentioned:
 - `arcgis.features.GeoAccessor` class adds the `spatial` namespace to the Pandas DataFrame.
