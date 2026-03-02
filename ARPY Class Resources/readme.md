@@ -12,6 +12,14 @@ Technical concepts:
 - Organization architecture; ArcGIS Online and/or Enterprise on one/multiple servers.
 - User types & privileges determine your access. Anyone can see the full extent of the API, but not everyone can run every tool. For example, someone signed in with anonymous access can see public groups, but not hosting servers 
 
+There are so many authentication methods because it has to work across a massive variety of deployment environments, security models, and automation scenarios. The API for Python exposes them for your use. These methods don't live "in" the API. 
+
+Server Management:
+- Enumerate federated/hosting servers with `gis.admin.servers.list()`
+
+`GIS("Home")` and `GIS("Pro")` reuse an existing authenticated session in the application.
+OAuth 2.0 opens a window, meaning it's an interactive experience.
+
 Classes mentioned:
 - `arcgis.features.GeoAccessor` class adds the `spatial` namespace to the Pandas DataFrame.
     - Some functionality from this class requires a geometry engine. We prefer ArcPy. If not available, other packages, like GDAL, can be used [(see help doc)](https://developers.arcgis.com/python/latest/api-reference/arcgis.features.toc.html#arcgis.features.GeoAccessor:~:text=%3Cmem_addr%3E%3E-,NOTE,-Setting%20the%20I)
