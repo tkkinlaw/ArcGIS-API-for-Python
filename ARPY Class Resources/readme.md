@@ -96,7 +96,24 @@ Search in the ArcGIS API for Python [implements](https://developers.arcgis.com/p
     - Without a field, the search ranks results according to various factors, and results can change. You have less control this way. Example: `res = gis.content.search('Yosemite')` 
 - Be aware that there are other implementation of `search` in different manager classes, like in the [User Manager class](https://developers.arcgis.com/python/latest/guide/accessing-and-managing-users/#searching-for-user-accounts). There are subtle differences in which parameters are available, but they operate the same. Be aware that the `max_items` (or `max_users`) defaults to 10. So, you need an idea of how much content you're looking for.
 
+#### Search take-aways
+`Search` is optimized for discovery. It returns candidates, not precise results. Filtering is usually required after.
+
+The query parameter yields fuzzy results. The other parameters, like item_type can be used to filter the results as they are returned. It's a two-step process.
+
+The query syntax is [Apache Lucene-style text query syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) as implemented by the ArcGIS REST Search engine.
+
+[Examples of search parameters](https://support.esri.com/en-us/knowledge-base/how-to-find-specific-items-using-queries-in-the-arcgis--000024383)
+
+#### advanced_search take-aways
+
+`advanced_search` is programatic and provides repeatable results.
+
 ### Comparing search and advanced_search for `ContentManager`:
+The syntax for the query parameter is the same. Same field names, same boolean logic, same wildcards, and same limitations. Both use the same REST endpoint. The difference between the two is in how the results are filtered, ranked, and returned.
+
+`advanced_search` is a thin-wrapper on the REST end point. `search` has more of a wrapper to be more human-readable and usable.
+
 Parameters of `search`: 
 ```python
 search(query, item_type, sort_field, sort_order, max_items, outside_org, categories, category_filters, enrich, filter)
